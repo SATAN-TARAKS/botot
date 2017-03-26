@@ -1,7 +1,15 @@
 botot
 TODO:
 
+* create a local images folder:
+  /Users/joonastamm/Desktop/untitled folder/images
+* move _all_ local images into 'images' folder
+  to make the app portable
+* upload images as part of the repository
+
+
 * refactor code
 * check file locking
 * migrate to DB (MySQL/MariaDB preferred)
 * find independent hosting partner
+

@@ -1,0 +1,7 @@
+botot
+TODO:
+
+* refactor code
+* check file locking
+* migrate to DB (MySQL/MariaDB preferred)
+* find independent hosting partner

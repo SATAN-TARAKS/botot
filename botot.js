@@ -25,57 +25,50 @@ let fifth2 = ["*i'm going*", '*yes please go*']
 let insults = ['Roses are red, violets are blue...god made me pretty what happened to you?', 'can you stop talking please?...you lower the iq of the whole server', 'go kys', 'did ya know that 100% of the people that see you die? thats the kind of bad guy you are....go kys', 'roses are red violets are blue trump and your mom...made you', "( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)           ( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°) \n( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)                    ( ͡° ͜ʖ ͡°)        ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)      ( ͡° ͜ʖ ͡°)                            ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)                                       ( ͡° ͜ʖ ͡°)                                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)      ( ͡° ͜ʖ ͡°)                                  ( ͡° ͜ʖ ͡°)                                                   ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)                              ( ͡° ͜ʖ ͡°)                        ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)             ( ͡° ͜ʖ ͡°)                           ( ͡° ͜ʖ ͡°)                                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"];
 let dice = ["1", "2", "3", "4", "5", "6"]
 let random = ["http://i.memeful.com/media/post/PM02BEd_700wa_0.gif", "http://i.memeful.com/media/post/1RXY1bd_700wa_0.gif", "http://i.memeful.com/media/post/kRp6z2w_700wa_0.gif", "", "http://i.memeful.com/media/post/BRkjB6M_700wa_0.gif", "http://i.memeful.com/media/post/ER5rbyd_700wa_0.gif", "http://i.memeful.com/media/post/1RXbZwp_700wa_0.gif", "http://i.memeful.com/media/post/oMJ28xM_700wa_0.gif", "http://i.memeful.com/media/post/1RXGWZM_700wa_0.gif", "http://i.memeful.com/media/post/WwlrNpR_700wa_0.gif", "http://i.memeful.com/media/post/kRQBx2d_700wa_0.gif", "http://i.memeful.com/media/post/Xw7pxGM_700wa_0.gif", "http://i.memeful.com/media/post/9d6Nqdp_700wa_0.gif", "http://i.memeful.com/media/post/kRp69bw_700wa_0.gif", "http://i.memeful.com/media/post/3dBOAEw_700wa_0.gif", "http://i.memeful.com/media/post/NwrLG6R_700wa_0.gif", "http://i.memeful.com/media/post/oMJNPM9_700wa_0.gif", "http://i.memeful.com/media/post/GwDA4qM_700wa_2.gif", "http://i.memeful.com/media/post/4wbkVXM_700wa_0.gif", "http://i.memeful.com/media/post/KWwlNRE_700wa_0.gif", "http://i.memeful.com/media/post/mRPm10d_700wa_0.gif", "http://i.memeful.com/media/post/BdqbnWw_700wa_0.gif", "http://i.memeful.com/media/post/BdqpZRW_700wa_0.gif", "http://i.memeful.com/media/post/YMKg8rM_700wa_0.gif", "http://i.memeful.com/media/post/kRpL6bR_700w_0.jpg"]
-let points = JSON.parse(fs.readFileSync("/Users/joonastamm/Desktop/untitled folder/points.json", 'utf8'));
-let profile = JSON.parse(fs.readFileSync('/Users/joonastamm/Desktop/untitled folder/profile.json', 'utf8'));
-let gold = JSON.parse(fs.readFileSync('/Users/joonastamm/Desktop/untitled folder/gold.json', 'utf8'));
-let reps = JSON.parse(fs.readFileSync('/Users/joonastamm/Desktop/untitled folder/rep.json', 'utf8'));
+let points = JSON.parse(fs.readFileSync("./points.json", 'utf8'));
+let profile = JSON.parse(fs.readFileSync('./profile.json', 'utf8'));
+let gold = JSON.parse(fs.readFileSync('./gold.json', 'utf8'));
+// let reps = JSON.parse(fs.readFileSync('./rep.json', 'utf8'));
 let loli = ["https://cdn.discordapp.com/attachments/272509305327058945/288716744153890816/image.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288716740051861515/1425812640384.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288716729796919307/565f29bad593eaee81278113782baeb0.png", "https://cdn.discordapp.com/attachments/272509305327058945/288716721018241024/563f31c94c541342ba596ae01952d128.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288716716081676288/7ad0c521514457142378a366ef12a62d.png", "https://cdn.discordapp.com/attachments/272509305327058945/288062080760807434/lolibooru_131064_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062076478554113/lolibooru_130996_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062068798783499/lolibooru_130989_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062063258107914/lolibooru_130987_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062057927147520/lolibooru_130847_sample.jpg"]
+
+let answers = {
+  "fuck you":      "yes please ( ͡° ͜ʖ ͡°)",
+  "la la la":      "stop saying that tifennie",
+  "who is satan?": "the creator of this bot",
+  "why not?":      "https://tenor.co/s6Ng.gif",
+  "Fuck you":      "yes please ( ͡° ͜ʖ ͡°)",
+  "bye":           "bye...we all love you...except your parents, they hate you, they think you are a failure to the family.",
+  "that's gay":    "http://i.memeful.com/media/post/lwmkBLR_700wa_0.gif",
+  "that's racist": "http://i.memeful.com/media/post/BdqbnWw_700wa_0.gif",
+  "what is the answer to all questions in the universe? ~~implying on a meme: 42~~": "42"
+}
 
 process.on("unhandledRejection", (err) => {
   console.log(err.stack);
 });
+
 bot.on("ready", () => {
   bot.user.setGame("*help | *invite")
-
   console.log("I am ready!");
 });
 
 bot.on("message", message => {
+  // guild specific command
   if (message.channel.name === "forum_ooc") return;
+
   if (message.author.bot) return;
   if (!message.guild) {
     message.author.sendMessage("please do not use DM's for this command!")
     return;
+  }
+  
+  // refactor message
+  let msg_content = message.content;
+  if ( answers[ msg_content ]) {
+    message.channel.sendMessage( answers[ msg_content ]);
+  }
 
-  }
-  if (message.content === "fuck you") {
-    message.channel.sendMessage("yes please ( ͡° ͜ʖ ͡°)")
-  }
-  if (message.content === "la la la") {
-    message.channel.sendMessage("stop saying that tifennie")
-  }
 
-  if (message.content === "who is satan?") {
-    message.channel.sendMessage("the creator of this bot")
-  }
-  if (message.content === "why not?") {
-    message.channel.sendMessage("https://tenor.co/s6Ng.gif")
-  }
-  if (message.content === "Fuck you") {
-    message.channel.sendMessage("yes please ( ͡° ͜ʖ ͡°)")
-  }
-  if (message.content === "bye") {
-    message.channel.sendMessage("bye...we all love you...except your parents, they hate you, they think you are a failure to the family. : )");
-  }
-  if (message.content === "that's gay") {
-    message.channel.sendMessage("http://i.memeful.com/media/post/lwmkBLR_700wa_0.gif");
-  }
-  if (message.content === "that's racist") {
-    message.channel.sendMessage("http://i.memeful.com/media/post/BdqbnWw_700wa_0.gif");
-  }
-  if (message.content === "what is the answer to all questions in the universe? ~~implying on a meme: 42~~") {
-    message.channel.sendMessage("42")
-  }
   let args = message.content.split(" ").slice(1);
 
   let command = message.content.split(" ")[0];
@@ -133,7 +126,7 @@ bot.on("message", message => {
   Autism: 0,
   chromo: 0,
  }
-fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
 
@@ -143,7 +136,7 @@ fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stri
   let userprofile = profile[message.author.id];
   let userGold = gold[message.author.id];
       userGold.gold++;
-  fs.writeFile('/Users/joonastamm/Desktop/untitled folder/gold.json', JSON.stringify(gold), (err) => {
+  fs.writeFile('./gold.json', JSON.stringify(gold), (err) => {
       if (err) console.error(err)
       });
 
@@ -159,7 +152,7 @@ if (command === "buy") {
      userGold.gold -=20
      message.reply("Transaction complete! \n price: 20  \n your gold: " + userGold.gold)
      userprofile.wimple++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Full helm") {
@@ -167,7 +160,7 @@ if (command === "buy") {
      userGold.gold -=1136
      message.reply("Transaction complete! \n price: 1136 \n your gold: " + userGold.gold)
      userprofile.Full_helm++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Great helm") {
@@ -175,7 +168,7 @@ if (command === "buy") {
      userGold.gold -=1884
      message.reply("Transaction complete! \n price: 1884 \n your gold: " + userGold.gold)
      userprofile.great_helm++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Svaroth warlord mask") {
@@ -183,7 +176,7 @@ if (command === "buy") {
      userGold.gold -=2430
      message.reply("Transaction complete! \n price: 2430 \n your gold: " + userGold.gold)
      userprofile.Svaroth_warlord_mask++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Great winged helm") {
@@ -191,7 +184,7 @@ if (command === "buy") {
      userGold.gold -=2798
      message.reply("Transaction complete! \n price: 2798 \n your gold: " + userGold.gold)
      userprofile.Great_winged_helm++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Arming cap") {
@@ -199,7 +192,7 @@ if (command === "buy") {
      userGold.gold -=40
      message.reply("Transaction complete! \n price: 40 \n your gold: " + userGold.gold)
      userprofile.Arming_cap++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Felt hat") {
@@ -207,7 +200,7 @@ if (command === "buy") {
      userGold.gold -=44
      message.reply("Transaction complete! \n price: 44 \n your gold: " + userGold.gold)
      userprofile.Felt_hat++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Hood") {
@@ -215,7 +208,7 @@ if (command === "buy") {
      userGold.gold -=48
      message.reply("Transaction complete! \n price: 48 \n your gold: " + userGold.gold)
      userprofile.Hood++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Padded Cowl") {
@@ -223,7 +216,7 @@ if (command === "buy") {
      userGold.gold -=92
      message.reply("Transaction complete! \n price: 92 \n your gold: " + userGold.gold)
      userprofile.Padded_Cowl++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Skull cap") {
@@ -231,7 +224,7 @@ if (command === "buy") {
      userGold.gold -=96
      message.reply("Transaction complete! \n price: 96 \n your gold: " + userGold.gold)
      userprofile.Skull_cap++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Leather cap") {
@@ -239,7 +232,7 @@ if (command === "buy") {
      userGold.gold -=100
      message.reply("Transaction complete! \n price: 100 \n your gold: " + userGold.gold)
      userprofile.Leather_cap++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Yxa archer cap") {
@@ -247,7 +240,7 @@ if (command === "buy") {
      userGold.gold -=136
      message.reply("Transaction complete! \n price: 136 \n your gold: " + userGold.gold)
      userprofile.Yxa_archer_cap++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Footman helmet") {
@@ -255,7 +248,7 @@ if (command === "buy") {
      userGold.gold -=144
      message.reply("Transaction complete! \n price: 144 \n your gold: " + userGold.gold)
      userprofile.Footman_helmet++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Svaroth footman cap") {
@@ -263,7 +256,7 @@ if (command === "buy") {
      userGold.gold -=148
      message.reply("Transaction complete! \n price: 148 \n your gold: " + userGold.gold)
      userprofile.Svaroth_footman_cap++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Yxa leather helm") {
@@ -271,7 +264,7 @@ if (command === "buy") {
      userGold.gold -=180
      message.reply("Transaction complete! \n price: 180 \n your gold: " + userGold.gold)
      userprofile.Yxa_leather_helm++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Chainmail cowl") {
@@ -279,7 +272,7 @@ if (command === "buy") {
      userGold.gold -=338
      message.reply("Transaction complete! \n price: 338 \n your gold: " + userGold.gold)
      userprofile.Chainmail_cowl++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Guard helmet") {
@@ -287,7 +280,7 @@ if (command === "buy") {
      userGold.gold -=784
      message.reply("Transaction complete! \n price: 784 \n your gold: " + userGold.gold)
      userprofile.Guard_helmet++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Yxa warrior helmet") {
@@ -295,7 +288,7 @@ if (command === "buy") {
      userGold.gold -=1050
      message.reply("Transaction complete! \n price: 1050 \n your gold: " + userGold.gold)
      userprofile.Yxa_warrior_helmet++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -304,7 +297,7 @@ if (command === "buy") {
      userGold.gold -=112
      message.reply("Transaction complete! \n price: 112 \n your gold: " + userGold.gold)
      userprofile.Linen_tunic++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -313,7 +306,7 @@ if (command === "buy") {
      userGold.gold -=158
      message.reply("Transaction complete! \n price: 158 \n your gold: " + userGold.gold)
      userprofile.Red_shirt++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -322,7 +315,7 @@ if (command === "buy") {
      userGold.gold -=160
      message.reply("Transaction complete! \n price: 160 \n your gold: " + userGold.gold)
      userprofile.Blue_shirt++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -331,7 +324,7 @@ if (command === "buy") {
      userGold.gold -=164
      message.reply("Transaction complete! \n price: 164 \n your gold: " + userGold.gold)
      userprofile.Blue_shirt++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -340,7 +333,7 @@ if (command === "buy") {
      userGold.gold -=248
      message.reply("Transaction complete! \n price: 248 \n your gold: " + userGold.gold)
      userprofile.Pelt_coat++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -349,7 +342,7 @@ if (command === "buy") {
      userGold.gold -=412
      message.reply("Transaction complete! \n price: 412 \n your gold: " + userGold.gold)
      userprofile.Surcoat++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -358,7 +351,7 @@ if (command === "buy") {
      userGold.gold -=740
      message.reply("Transaction complete! \n price: 740 \n your gold: " + userGold.gold)
      userprofile.Leathercoat++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -367,7 +360,7 @@ if (command === "buy") {
      userGold.gold -=1584
      message.reply("Transaction complete! \n price: 1584 \n your gold: " + userGold.gold)
      userprofile.Leathertunic++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -376,7 +369,7 @@ if (command === "buy") {
      userGold.gold -=2676
      message.reply("Transaction complete! \n price: 2676 \n your gold: " + userGold.gold)
      userprofile.Paddedcloth++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -385,7 +378,7 @@ if (command === "buy") {
      userGold.gold -=2784
      message.reply("Transaction complete! \n price: 2784 \n your gold: " + userGold.gold)
      userprofile.Aketon++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -394,7 +387,7 @@ if (command === "buy") {
      userGold.gold -=3358
      message.reply("Transaction complete! \n price: 3358 \n your gold: " + userGold.gold)
      userprofile.Leatherarmour++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -403,7 +396,7 @@ if (command === "buy") {
      userGold.gold -=4120
      message.reply("Transaction complete! \n price: 4120 \n your gold: " + userGold.gold)
      userprofile.Thickleatherarmour++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -412,7 +405,7 @@ if (command === "buy") {
      userGold.gold -=9340
      message.reply("Transaction complete! \n price: 9340 \n your gold: " + userGold.gold)
      userprofile.Chainmail++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -421,7 +414,7 @@ if (command === "buy") {
      userGold.gold -=9960
      message.reply("Transaction complete! \n price: 9960 \n your gold: " + userGold.gold)
      userprofile.Chainmailcoat++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -430,7 +423,7 @@ if (command === "buy") {
      userGold.gold -=10460
      message.reply("Transaction complete! \n price: 10460 \n your gold: " + userGold.gold)
      userprofile.Tabartovermail++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -439,7 +432,7 @@ if (command === "buy") {
      userGold.gold -=11240
      message.reply("Transaction complete! \n price: 11240 \n your gold: " + userGold.gold)
      userprofile.Surcoatovermail++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -448,7 +441,7 @@ if (command === "buy") {
      userGold.gold -=13620
      message.reply("Transaction complete! \n price: 13620 \n your gold: " + userGold.gold)
      userprofile.CourBuili++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -457,7 +450,7 @@ if (command === "buy") {
      userGold.gold -=14346
      message.reply("Transaction complete! \n price: 14346 \n your gold: " + userGold.gold)
      userprofile.Byrnie++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -466,7 +459,7 @@ if (command === "buy") {
      userGold.gold -=15824
      message.reply("Transaction complete! \n price: 15824 \n your gold: " + userGold.gold)
      userprofile.Lammelararmour++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -475,7 +468,7 @@ if (command === "buy") {
      userGold.gold -=19968
      message.reply("Transaction complete! \n price: 19968 \n your gold: " + userGold.gold)
      userprofile.Brigandine++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -484,7 +477,7 @@ if (command === "buy") {
      userGold.gold -=24180
      message.reply("Transaction complete! \n price: 24180 \n your gold: " + userGold.gold)
      userprofile.Platearmour++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -493,7 +486,7 @@ if (command === "buy") {
      userGold.gold -=29824
      message.reply("Transaction complete! \n price: 29824 \n your gold: " + userGold.gold)
      userprofile.Surcoatoverplate++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -503,7 +496,7 @@ if (command === "buy") {
      userGold.gold -=50
      message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
      userprofile.christianity++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "terrorist") {
@@ -511,7 +504,7 @@ if (command === "buy") {
      userGold.gold -=150
      message.reply("Transaction complete! \n price: 150 \n your gold: " + userGold.gold)
      userprofile.terrorist++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "jew") {
@@ -519,7 +512,7 @@ if (command === "buy") {
      userGold.gold -=50
      message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
      userprofile.jews++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "SATAN") {
@@ -527,7 +520,7 @@ if (command === "buy") {
      userGold.gold -=100000000000
      message.reply("Transaction complete! \n price: 100000000000 \n your gold: " + userGold.gold)
      userprofile.satan++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "fish") {
@@ -535,7 +528,7 @@ if (command === "buy") {
      userGold.gold -=100
      message.reply("Transaction complete! \n price: 100 \n your gold:" + userGold.gold)
      userprofile.fish++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "cancer") {
@@ -543,7 +536,7 @@ if (command === "buy") {
      userGold.gold -=200
      message.reply("Transaction complete! \n price: 200 \n your gold:" + userGold.gold)
      userprofile.cancer++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "autism") {
@@ -551,7 +544,7 @@ if (command === "buy") {
      userGold.gold -=2200
      message.reply("Transaction complete! \n price: 2200 \n your gold:" + userGold.gold)
      userprofile.Autism++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "chromosomes") {
@@ -559,7 +552,7 @@ if (command === "buy") {
      userGold.gold -=2220
      message.reply("Transaction complete! \n price: 2220 \n your gold:" + userGold.gold)
      userprofile.chromo++;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
   }     } 
@@ -608,7 +601,7 @@ if (command === "status") {
     message.channel.sendEmbed(statusembed)
   }
 if (command === "lennyception") {
-    message.channel.sendFile("/Users/joonastamm/Desktop/untitled folder/lenn.gif")
+    message.channel.sendFile("./lenn.gif")
   }
 
 if (command === "random") {
@@ -629,7 +622,7 @@ if (command === "invitelink") {
       .catch(error => console.error(error));
   }
 if (command === "wow") {
-    message.channel.sendFile("/Users/joonastamm/Desktop/untitled folder/wow.gif")
+    message.channel.sendFile("./wow.gif")
   }
 if (command === "okay") {
     message.channel.sendMessage("https://giphy.com/gifs/boy-meets-world-agree-yes-10pR6dUXHBpZSg ");
@@ -889,7 +882,7 @@ if (command === "ded_chat") {
   }
 
 if (command === "code") {
-    message.channel.sendFile("/Users/joonastamm/Desktop/untitled folder/th-17.txt")
+    message.channel.sendFile("./th-17.txt")
     message.author.sendMessage("Hint: TBAB -> 1A2B1T -> alphabetically!, ")
     message.channel.sendMessage('To Binary And Beyond!')
       .then(() => {
@@ -915,7 +908,7 @@ if (command === "code") {
   }
 if (command === "code2") {
     message.delete()
-    message.author.sendFile("/Users/joonastamm/Desktop/untitled folder/]';.lm nbynujikmlop.;:-=p0.png")
+    message.author.sendFile("./]';.lm nbynujikmlop.;:-=p0.png")
   }
 if (command === "genius") {
     message.channel.sendMessage("``` \n list of all first solvers: \n code 1:  SATAN-TARKS \n code 2:  Lithusei \n code 3:  Ai```")
@@ -936,6 +929,7 @@ if (command === "SafetyProtocol") {
   }
 //reputation
 
+/*
   if(!reps[message.author.id]) reps[message.author.id] = {
    rep: 0
   }
@@ -948,7 +942,7 @@ if (command === "SafetyProtocol") {
     rep: 0
       };
     reps[message.mentions.users.first().id].rep++;
-    fs.writeFile("/Users/joonastamm/Desktop/untitled folder/rep.json", JSON.stringify(reps), (err) => {
+    fs.writeFile("./rep.json", JSON.stringify(reps), (err) => {
   if (err) console.error(err)
       });
     talkedRecently.add(message.author.id);
@@ -958,6 +952,7 @@ if (command === "SafetyProtocol") {
     message.author.sendMessage("You can award a reputation point!")
       }, tt );
  }
+ */
  
 //level
   if (!points[message.author.id]) points[message.author.id] = {
@@ -982,7 +977,7 @@ if (command === "SafetyProtocol") {
 
     message.channel.sendEmbed(embed);
   }
-  fs.writeFile("/Users/joonastamm/Desktop/untitled folder/points.json", JSON.stringify(points), (err) => {
+  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
 //profile
@@ -1217,7 +1212,7 @@ gold: 0
   userGold.gold-= amount,
   gold[message.mentions.users.first().id].gold+= amount
   
-  fs.writeFile('/Users/joonastamm/Desktop/untitled folder/gold.json', JSON.stringify(gold), (err) => {
+  fs.writeFile('./gold.json', JSON.stringify(gold), (err) => {
       if (err) console.error(err)
     });
     message.channel.sendMessage("transfer complete! \n your gold:" + userGold.gold + "\n gold transfered:" + amount + "\n gold:" + gold[message.mentions.users.first().id].gold)
@@ -1230,7 +1225,7 @@ if (command === "sell") {
      userGold.gold +=20
      message.reply("Transaction complete! \n price: 20  \n your gold: " + userGold.gold)
      userprofile.wimple--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Full helm") {
@@ -1238,7 +1233,7 @@ if (command === "sell") {
      userGold.gold +=1136
      message.reply("Transaction complete! \n price: 1136 \n your gold: " + userGold.gold)
      userprofile.Full_helm--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Great helm") {
@@ -1246,7 +1241,7 @@ if (command === "sell") {
      userGold.gold +=1884
      message.reply("Transaction complete! \n price: 1884 \n your gold: " + userGold.gold)
      userprofile.great_helm--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Svaroth warlord mask") {
@@ -1254,7 +1249,7 @@ if (command === "sell") {
      userGold.gold +=2430
      message.reply("Transaction complete! \n price: 2430 \n your gold: " + userGold.gold)
      userprofile.Svaroth_warlord_mask--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Great winged helm") {
@@ -1262,7 +1257,7 @@ if (command === "sell") {
      userGold.gold +=2798
      message.reply("Transaction complete! \n price: 2798 \n your gold: " + userGold.gold)
      userprofile.Great_winged_helm--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Arming cap") {
@@ -1270,7 +1265,7 @@ if (command === "sell") {
      userGold.gold +=40
      message.reply("Transaction complete! \n price: 40 \n your gold: " + userGold.gold)
      userprofile.Arming_cap--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Felt hat") {
@@ -1278,7 +1273,7 @@ if (command === "sell") {
      userGold.gold +=44
      message.reply("Transaction complete! \n price: 44 \n your gold: " + userGold.gold)
      userprofile.Felt_hat--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Hood") {
@@ -1286,7 +1281,7 @@ if (command === "sell") {
      userGold.gold +=48
      message.reply("Transaction complete! \n price: 48 \n your gold: " + userGold.gold)
      userprofile.Hood--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Padded Cowl") {
@@ -1294,7 +1289,7 @@ if (command === "sell") {
      userGold.gold +=92
      message.reply("Transaction complete! \n price: 92 \n your gold: " + userGold.gold)
      userprofile.Padded_Cowl--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Skull cap") {
@@ -1302,7 +1297,7 @@ if (command === "sell") {
      userGold.gold +=96
      message.reply("Transaction complete! \n price: 96 \n your gold: " + userGold.gold)
      userprofile.Skull_cap--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Leather cap") {
@@ -1310,7 +1305,7 @@ if (command === "sell") {
      userGold.gold +=100
      message.reply("Transaction complete! \n price: 100 \n your gold: " + userGold.gold)
      userprofile.Leather_cap--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Yxa archer cap") {
@@ -1318,7 +1313,7 @@ if (command === "sell") {
      userGold.gold +=136
      message.reply("Transaction complete! \n price: 136 \n your gold: " + userGold.gold)
      userprofile.Yxa_archer_cap--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Footman helmet") {
@@ -1326,7 +1321,7 @@ if (command === "sell") {
      userGold.gold +=144
      message.reply("Transaction complete! \n price: 144 \n your gold: " + userGold.gold)
      userprofile.Footman_helmet--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Svaroth footman cap") {
@@ -1334,7 +1329,7 @@ if (command === "sell") {
      userGold.gold +=148
      message.reply("Transaction complete! \n price: 148 \n your gold: " + userGold.gold)
      userprofile.Svaroth_footman_cap--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Yxa leather helm") {
@@ -1342,7 +1337,7 @@ if (command === "sell") {
      userGold.gold-=180
      message.reply("Transaction complete! \n price: 180 \n your gold: " + userGold.gold)
      userprofile.Yxa_leather_helm--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Chainmail cowl") {
@@ -1350,7 +1345,7 @@ if (command === "sell") {
      userGold.gold +=338
      message.reply("Transaction complete! \n price: 338 \n your gold: " + userGold.gold)
      userprofile.Chainmail_cowl--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Guard helmet") {
@@ -1358,7 +1353,7 @@ if (command === "sell") {
      userGold.gold +=784
      message.reply("Transaction complete! \n price: 784 \n your gold: " + userGold.gold)
      userprofile.Guard_helmet--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "Yxa warrior helmet") {
@@ -1366,7 +1361,7 @@ if (command === "sell") {
      userGold.gold +=1050
      message.reply("Transaction complete! \n price: 1050 \n your gold: " + userGold.gold)
      userprofile.Yxa_warrior_helmet--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1375,7 +1370,7 @@ if (command === "sell") {
      userGold.gold +=112
      message.reply("Transaction complete! \n price: 112 \n your gold: " + userGold.gold)
      userprofile.Linen_tunic--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1384,7 +1379,7 @@ if (command === "sell") {
      userGold.gold +=158
      message.reply("Transaction complete! \n price: 158 \n your gold: " + userGold.gold)
      userprofile.Red_shirt--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1393,7 +1388,7 @@ if (command === "sell") {
      userGold.gold +=160
      message.reply("Transaction complete! \n price: 160 \n your gold: " + userGold.gold)
      userprofile.Blue_shirt--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1402,7 +1397,7 @@ if (command === "sell") {
      userGold.gold +=164
      message.reply("Transaction complete! \n price: 164 \n your gold: " + userGold.gold)
      userprofile.Blue_shirt--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1411,7 +1406,7 @@ if (command === "sell") {
      userGold.gold +=248
      message.reply("Transaction complete! \n price: 248 \n your gold: " + userGold.gold)
      userprofile.Pelt_coat--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1420,7 +1415,7 @@ if (command === "sell") {
      userGold.gold +=412
      message.reply("Transaction complete! \n price: 412 \n your gold: " + userGold.gold)
      userprofile.Surcoat--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1429,7 +1424,7 @@ if (command === "sell") {
      userGold.gold +=740
      message.reply("Transaction complete! \n price: 740 \n your gold: " + userGold.gold)
      userprofile.Leathercoat--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1438,7 +1433,7 @@ if (command === "sell") {
      userGold.gold +=1584
      message.reply("Transaction complete! \n price: 1584 \n your gold: " + userGold.gold)
      userprofile.Leathertunic--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1447,7 +1442,7 @@ if (command === "sell") {
      userGold.gold +=2676
      message.reply("Transaction complete! \n price: 2676 \n your gold: " + userGold.gold)
      userprofile.Paddedcloth--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1456,7 +1451,7 @@ if (command === "sell") {
      userGold.gold +=2784
      message.reply("Transaction complete! \n price: 2784 \n your gold: " + userGold.gold)
      userprofile.Aketon--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1465,7 +1460,7 @@ if (command === "sell") {
      userGold.gold +=3358
      message.reply("Transaction complete! \n price: 3358 \n your gold: " + userGold.gold)
      userprofile.Leatherarmour--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1474,7 +1469,7 @@ if (command === "sell") {
      userGold.gold +=4120
      message.reply("Transaction complete! \n price: 4120 \n your gold: " + userGold.gold)
      userprofile.Thickleatherarmour--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1483,7 +1478,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=9340
      message.reply("Transaction complete! \n price: 9340 \n your gold: " + userGold.gold)
      userprofile.Chainmail--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1492,7 +1487,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=9960
      message.reply("Transaction complete! \n price: 9960 \n your gold: " + userGold.gold)
      userprofile.Chainmailcoat--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1501,7 +1496,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=10460
      message.reply("Transaction complete! \n price: 10460 \n your gold: " + userGold.gold)
      userprofile.Tabartovermail--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1510,7 +1505,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=11240
      message.reply("Transaction complete! \n price: 11240 \n your gold: " + userGold.gold)
      userprofile.Surcoatovermail--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1519,7 +1514,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=13620
      message.reply("Transaction complete! \n price: 13620 \n your gold: " + userGold.gold)
      userprofile.CourBuili--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1528,7 +1523,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=14346
      message.reply("Transaction complete! \n price: 14346 \n your gold: " + userGold.gold)
      userprofile.Byrnie--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1537,7 +1532,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=15824
      message.reply("Transaction complete! \n price: 15824 \n your gold: " + userGold.gold)
      userprofile.Lammelararmour--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1546,7 +1541,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=19968
      message.reply("Transaction complete! \n price: 19968 \n your gold: " + userGold.gold)
      userprofile.Brigandine--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1555,7 +1550,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=24180
      message.reply("Transaction complete! \n price: 24180 \n your gold: " + userGold.gold)
      userprofile.Platearmour--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1564,7 +1559,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=29824
      message.reply("Transaction complete! \n price: 29824 \n your gold: " + userGold.gold)
      userprofile.Surcoatoverplate--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
    }
@@ -1574,7 +1569,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=50
      message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
      userprofile.christianity--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "terrorist") {
@@ -1582,7 +1577,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=150
      message.reply("Transaction complete! \n price: 150 \n your gold: " + userGold.gold)
      userprofile.terrorist--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "jew") {
@@ -1590,7 +1585,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=50
      message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
      userprofile.jews--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "SATAN") {
@@ -1598,7 +1593,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=100000000009
      message.reply("Transaction complete! \n price: 100000000000 \n your gold: " + userGold.gold)
      userprofile.satan--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "fish") {
@@ -1606,7 +1601,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=100
      message.reply("Transaction complete! \n price: 100 \n your gold:" + userGold.gold)
      userprofile.fish--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "cancer") {
@@ -1614,7 +1609,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=200
      message.reply("Transaction complete! \n price: 200 \n your gold:" + userGold.gold)
      userprofile.cancer--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "autism") {
@@ -1622,7 +1617,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=2200
      message.reply("Transaction complete! \n price: 2200 \n your gold:" + userGold.gold)
      userprofile.Autism--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });}
   if (thing === "chromosomes") {
@@ -1630,7 +1625,7 @@ if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!
      userGold.gold +=2220
      message.reply("Transaction complete! \n price: 2220 \n your gold:" + userGold.gold)
      userprofile.chromo--;
-     fs.writeFile('/Users/joonastamm/Desktop/untitled folder/profile.json', JSON.stringify(profile), (err) => {
+     fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
       if (err) console.error(err)
     });
   }     } 
@@ -1645,3 +1640,4 @@ function clean(text) {
 bot.login(config.token);
 
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

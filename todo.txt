@@ -1,14 +1,18 @@
 botot
+
+BUGS:
+
+* '*help' produces a '3Error: Bad Request'
+
 TODO:
 
-* create a local images folder:
-  /Users/joonastamm/Desktop/untitled folder/images
-* move _all_ local images into 'images' folder
-  to make the app portable
-* upload images as part of the repository
-
-
 * refactor code
+  - in progress
+
+* adjust paths to relative ('./') instead of absolute
+  - done jwl/Mar 27 2017
+
+
 * check file locking
 * migrate to DB (MySQL/MariaDB preferred)
 * find independent hosting partner

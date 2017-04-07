@@ -1,5 +1,5 @@
 # botot
-Satan's list:
++ Satan's list:
   - music (only when hosting on another server) -> not too hard
   - admin commands:
       - kick -> done

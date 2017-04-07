@@ -14,6 +14,9 @@ TODO:
 
 
 * check file locking
+-file locking checked, will be implmented as soon as home
 * migrate to DB (MySQL/MariaDB preferred)
+-SQLite for now, am reading about MySQL
 * find independent hosting partner
+-split costs?
 

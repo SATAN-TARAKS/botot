@@ -10,5 +10,5 @@
       - could be done by reading and writing files -> moderate.
   * image manipulation like tatsumaki's profile command -> needs more research done.
   * profile command -> needs more research done.
-  * good quality server -> for hosting.
+  * good quality server -> for hosting
   * I had something else but i forgot.

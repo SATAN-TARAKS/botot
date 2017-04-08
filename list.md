@@ -10,3 +10,4 @@
   * image manipulation like tatsumaki's profile command -> needs more research done.
   * profile command -> needs more research done.
   * good quality server -> for hosting
+  * Cleverbot

@@ -1,583 +1,89 @@
 //const
-const Discord = require("discord.js");
-const bot = new Discord.Client();
-const Client = require('discord.js').Client;
-const config = require("/data03/virt51945/botot/config.json");
-const client = new Client();
-const fs = require("fs");
+ const Discord = require("discord.js");
+ const bot = new Discord.Client();
+ const Client = require('discord.js').Client;
+ const config = require("/data03/virt51945/botot/config.json");
+ const client = new Client();
+ const fs = require("fs");
+ const sql = require('sqlite');
+//lets
+ let selfkills = ['sure bend over...oh..you wanted to kill yourself?...okay `kills you`', 'what happened? did ya mom delete your candy crush app? did you lose your ego? were you not allowed to play on your playstation 4? did your mom take your phone? or are you just retarded? guess im just making the avarage iq higher by doing this... `kills you`']
+ let kills = ['kill yourself...*asked kindly*', 'stop breathing! By breathing you are polluting the world!', 'do you hear that? *silence*...just like you should be...all the time...in a coffin...under the ground...dead', '**a dark object appears**...`watch out he got a big black    dildo` *hits you to death with a dildo*', 'you may choose how I end your life: either get fucked anally till you die, oooooooor you could just go do it yourself and fuck yourself till death (people may be watching....probably)',]
+ let hugs = ['hugs you so hard your chest gets crushed by the force of love < 3', 'tries to punch you...ends up hugging you', 'HUUUUUUUUUUUUUUUUUUG MEEEEEEEEEEE SENPAI', 'hugs you', 'wraps arms around you in a way you humans call hugging', 'accidentally breaks your ribs while hugging you...*sorry*']
+ let roulette = ['hey look...you have a big hole in your head...that looks dangerous...go see a doctor...', 'damnit. stop shooting yourself *cleans up your brains that are scattered all over the place*', 'i didnt hear a bang...`bang`...oh nvm there it was', 'hey look you`re still alive!!! : ) **kills you**', 'click']
+ let hello1 = ["**hello**", "**hi**", "**ugh...its you again**", "**wow didn't see you coming...oh yeah hello**"]
+ let hello2 = ["*hello*", "*heya*", "*oh no...it saw me...*", "*great...its you again...*", "*HIIIIIIII SENPAI*"]
+ let first1 = ["**did i do something wrong?**", "**hey look its you! welcome back**"]
+ let first2 = ["*yes*", "*yes...*"]
+ let second1 = ["**why are you sad? what did i do???**", "**you're always so salty...you should see a doctor**"]
+ let second2 = ["*it was you that killed it....it's all your fault damnit...look at what you've done...please stop this already*", "*you just couldn't let it live, could you?*", "*this is all your fault...idiot...BAKA...*"]
+ let third1 = ["**you blaming me again for killing mastah's chat?**", "**i didn't kill the chat....that was you, you sick fuck trying to blame me for it....look at all the people going offline. It's all your fault**"]
+ let third2 = ["*why do you make me cry everytime? it's not nice you know...*`cries`", "*why do you make me cry everytime? it's not nice you know....*`cries`"]
+ let fourth1 = ["**okay i'm done with your bullshit...you should pull yourself together..you stupid little faggot...**", "**hey im sorry okay? BUT DON'T FUCKING BLAME ME FOR EVERYTHING!!!!!**"]
+ let fourth2 = ["*uhm i guess we should get a divorce...*", "*I HATE YOU...I'M LEAVING YOU*"]
+ let fifth1 = ["**great that makes two of us**", "**finally!**", "**why are you still here...go cry in a corner or something i dont want to se your face EVER AGAIN...**"]
+ let fifth2 = ["*i'm going*", '*yes please go*']
+ let insults = ['Roses are red, violets are blue...god made me pretty what happened to you?', 'can you stop talking please?...you lower the iq of the whole server', 'did ya know that 100% of the people that see you die? thats the kind of bad guy you are....go kys', 'roses are red violets are blue trump and your mom...made you', "( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)           ( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°) \n( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)                    ( ͡° ͜ʖ ͡°)        ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)      ( ͡° ͜ʖ ͡°)                            ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)                                       ( ͡° ͜ʖ ͡°)                                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)      ( ͡° ͜ʖ ͡°)                                  ( ͡° ͜ʖ ͡°)                                                   ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)                              ( ͡° ͜ʖ ͡°)                        ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)             ( ͡° ͜ʖ ͡°)                           ( ͡° ͜ʖ ͡°)                                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"];
+ let disclaimer = ["**NOTE:** \n ``` \n when feeling down or depressed, killing yourself is not the answer. Things that help: \n - Chat with trained HopeCoaches on 'https://www.thehopeline.com/gethelp' page.  You can also download TheHopeLine app to reach out for help in an instant. \n - Call or chat with the Suicide Prevention LifeLine at 1-800-273-8255 or www.suicidepreventionlifeline.org. \n Don't do it!```"]
+ let dice = ["1", "2", "3", "4", "5", "6"]
+ let random = ["http://i.memeful.com/media/post/PM02BEd_700wa_0.gif", "http://i.memeful.com/media/post/1RXY1bd_700wa_0.gif", "http://i.memeful.com/media/post/kRp6z2w_700wa_0.gif", "", "http://i.memeful.com/media/post/BRkjB6M_700wa_0.gif", "http://i.memeful.com/media/post/ER5rbyd_700wa_0.gif", "http://i.memeful.com/media/post/1RXbZwp_700wa_0.gif", "http://i.memeful.com/media/post/oMJ28xM_700wa_0.gif", "http://i.memeful.com/media/post/1RXGWZM_700wa_0.gif", "http://i.memeful.com/media/post/WwlrNpR_700wa_0.gif", "http://i.memeful.com/media/post/kRQBx2d_700wa_0.gif", "http://i.memeful.com/media/post/Xw7pxGM_700wa_0.gif", "http://i.memeful.com/media/post/9d6Nqdp_700wa_0.gif", "http://i.memeful.com/media/post/kRp69bw_700wa_0.gif", "http://i.memeful.com/media/post/3dBOAEw_700wa_0.gif", "http://i.memeful.com/media/post/NwrLG6R_700wa_0.gif", "http://i.memeful.com/media/post/oMJNPM9_700wa_0.gif", "http://i.memeful.com/media/post/GwDA4qM_700wa_2.gif", "http://i.memeful.com/media/post/4wbkVXM_700wa_0.gif", "http://i.memeful.com/media/post/KWwlNRE_700wa_0.gif", "http://i.memeful.com/media/post/mRPm10d_700wa_0.gif", "http://i.memeful.com/media/post/BdqbnWw_700wa_0.gif", "http://i.memeful.com/media/post/BdqpZRW_700wa_0.gif", "http://i.memeful.com/media/post/YMKg8rM_700wa_0.gif", "http://i.memeful.com/media/post/kRpL6bR_700w_0.jpg"]
+ let snekfetch = require('snekfetch');
+ let url = "https://discordbots.org/api/bots/256885622944432129/stats"
+ let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0MzUwMzIyMTM1MDMzNDQ3NSIsImlhdCI6MTQ5MzMyNDcyOX0.P3MFPihdfoOCMP3yjYNO5vlsXdBzCyqmLrg5sVkxw9gs"
 
-let selfkills = ['sure bend over...oh..you wanted to kill yourself?...okay `kills you`', 'what happened? did ya mom delete your candy crush app? did you lose your ego? were you not allowed to play on your playstation 4? did your mom take your phone? or are you just retarded? guess im just making the avarage iq higher by doing this... `kills you`']
-let kills = ['kill yourself...*asked kindly*', 'stop breathing! By breathing you are polluting the world!', 'do you hear that? *silence*...just like you should be...all the time...in a coffin...under the ground...dead', '**a dark object appears**...`watch out he got a big black    dildo` *hits you to death with a dildo*', 'you may choose how I end your life: either get fucked anally till you die, oooooooor you could just go do it yourself and fuck yourself till death (people may be watching....probably)',]
-let hugs = ['hugs you so hard your chest gets crushed by the force of love < 3', 'tries to punch you...ends up hugging you', 'HUUUUUUUUUUUUUUUUUUG MEEEEEEEEEEE SENPAI', 'hugs you', 'wraps arms around you in a way you humans call hugging', 'accidentally breaks your ribs while hugging you...*sorry*']
-let roulette = ['hey look...you have a big hole in your head...that looks dangerous...go see a doctor...', 'damnit. stop shooting yourself *cleans up your brains that are scattered all over the place*', 'i didnt hear a bang...`bang`...oh nvm there it was', 'hey look you`re still alive!!! : ) **kills you**', 'click']
-let hello1 = ["**hello**", "**hi**", "**ugh...its you again**", "**wow didn't see you coming...oh yeah hello**"]
-let hello2 = ["*hello*", "*heya*", "*oh no...it saw me...*", "*great...its you again...*", "*HIIIIIIII SENPAI*"]
-let first1 = ["**did i do something wrong?**", "**hey look its you! welcome back**"]
-let first2 = ["*yes*", "*yes...*"]
-let second1 = ["**why are you sad? what did i do???**", "**you're always so salty...you should see a doctor**"]
-let second2 = ["*it was you that killed it....it's all your fault damnit...look at what you've done...please stop this already*", "*you just couldn't let it live, could you?*", "*this is all your fault...idiot...BAKA...*"]
-let third1 = ["**you blaming me again for killing mastah's chat?**", "**i didn't kill the chat....that was you, you sick fuck trying to blame me for it....look at all the people going offline. It's all your fault**"]
-let third2 = ["*why do you make me cry everytime? it's not nice you know...*`cries`", "*why do you make me cry everytime? it's not nice you know....*`cries`"]
-let fourth1 = ["**okay i'm done with your bullshit...you should pull yourself together..you stupid little faggot...**", "**hey im sorry okay? BUT DON'T FUCKING BLAME ME FOR EVERYTHING!!!!!**"]
-let fourth2 = ["*uhm i guess we should get a divorce...*", "*I HATE YOU...I'M LEAVING YOU*"]
-let fifth1 = ["**great that makes two of us**", "**finally!**", "**why are you still here...go cry in a corner or something i dont want to se your face EVER AGAIN...**"]
-let fifth2 = ["*i'm going*", '*yes please go*']
-let insults = ['Roses are red, violets are blue...god made me pretty what happened to you?', 'can you stop talking please?...you lower the iq of the whole server', 'did ya know that 100% of the people that see you die? thats the kind of bad guy you are....go kys', 'roses are red violets are blue trump and your mom...made you', "( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)           ( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°) \n( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)                    ( ͡° ͜ʖ ͡°)        ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)      ( ͡° ͜ʖ ͡°)                            ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)                                       ( ͡° ͜ʖ ͡°)                                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)      ( ͡° ͜ʖ ͡°)                                  ( ͡° ͜ʖ ͡°)                                                   ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)                              ( ͡° ͜ʖ ͡°)                        ( ͡° ͜ʖ ͡°)              ( ͡° ͜ʖ ͡°)\n( ͡° ͜ʖ ͡°)             ( ͡° ͜ʖ ͡°)                           ( ͡° ͜ʖ ͡°)                                ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"];
-let disclaimer = ["**NOTE:** \n ``` \n when feeling down or depressed, killing yourself is not the answer. Things that help: \n - Chat with trained HopeCoaches on 'https://www.thehopeline.com/gethelp' page.  You can also download TheHopeLine app to reach out for help in an instant. \n - Call or chat with the Suicide Prevention LifeLine at 1-800-273-8255 or www.suicidepreventionlifeline.org. \n Don't do it!```"]
-let dice = ["1", "2", "3", "4", "5", "6"]
-let random = ["http://i.memeful.com/media/post/PM02BEd_700wa_0.gif", "http://i.memeful.com/media/post/1RXY1bd_700wa_0.gif", "http://i.memeful.com/media/post/kRp6z2w_700wa_0.gif", "", "http://i.memeful.com/media/post/BRkjB6M_700wa_0.gif", "http://i.memeful.com/media/post/ER5rbyd_700wa_0.gif", "http://i.memeful.com/media/post/1RXbZwp_700wa_0.gif", "http://i.memeful.com/media/post/oMJ28xM_700wa_0.gif", "http://i.memeful.com/media/post/1RXGWZM_700wa_0.gif", "http://i.memeful.com/media/post/WwlrNpR_700wa_0.gif", "http://i.memeful.com/media/post/kRQBx2d_700wa_0.gif", "http://i.memeful.com/media/post/Xw7pxGM_700wa_0.gif", "http://i.memeful.com/media/post/9d6Nqdp_700wa_0.gif", "http://i.memeful.com/media/post/kRp69bw_700wa_0.gif", "http://i.memeful.com/media/post/3dBOAEw_700wa_0.gif", "http://i.memeful.com/media/post/NwrLG6R_700wa_0.gif", "http://i.memeful.com/media/post/oMJNPM9_700wa_0.gif", "http://i.memeful.com/media/post/GwDA4qM_700wa_2.gif", "http://i.memeful.com/media/post/4wbkVXM_700wa_0.gif", "http://i.memeful.com/media/post/KWwlNRE_700wa_0.gif", "http://i.memeful.com/media/post/mRPm10d_700wa_0.gif", "http://i.memeful.com/media/post/BdqbnWw_700wa_0.gif", "http://i.memeful.com/media/post/BdqpZRW_700wa_0.gif", "http://i.memeful.com/media/post/YMKg8rM_700wa_0.gif", "http://i.memeful.com/media/post/kRpL6bR_700w_0.jpg"]
-let points = JSON.parse(fs.readFileSync("/data03/virt51945/botot/points.json", 'utf8'));
-let profile = JSON.parse(fs.readFileSync('/data03/virt51945/botot/profile.json', 'utf8'));
-let gold = JSON.parse(fs.readFileSync('/data03/virt51945/botot/gold.json', 'utf8'));
-let reps = JSON.parse(fs.readFileSync('/data03/virt51945/botot/rep.json', 'utf8'));
-let loli = ["https://cdn.discordapp.com/attachments/272509305327058945/288716744153890816/image.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288716740051861515/1425812640384.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288716729796919307/565f29bad593eaee81278113782baeb0.png", "https://cdn.discordapp.com/attachments/272509305327058945/288716721018241024/563f31c94c541342ba596ae01952d128.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288716716081676288/7ad0c521514457142378a366ef12a62d.png", "https://cdn.discordapp.com/attachments/272509305327058945/288062080760807434/lolibooru_131064_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062076478554113/lolibooru_130996_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062068798783499/lolibooru_130989_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062063258107914/lolibooru_130987_sample.jpg", "https://cdn.discordapp.com/attachments/272509305327058945/288062057927147520/lolibooru_130847_sample.jpg"]
-let snekfetch = require('snekfetch');
-let url = "https://discordbots.org/api/bots/256885622944432129/stats"
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0MzUwMzIyMTM1MDMzNDQ3NSIsImlhdCI6MTQ5MzMyNDcyOX0.P3MFPihdfoOCMP3yjYNO5vlsXdBzCyqmLrg5sVkxw9gs"
-process.on("unhandledRejection", (err) => {
-  console.log(err.stack);
-});
 bot.on("guildCreate", guild => {
   snekfetch.post("https://discordbots.org/api/bots/256885622944432129/stats")
   .set('Authorization', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0MzUwMzIyMTM1MDMzNDQ3NSIsImlhdCI6MTQ5MzMyNTA0Mn0.tx-MN-S7ojiflFUcn7hyLRFAj_oEdAyKYpvFm_gucgA")
   .send({ server_count: bot.guilds.size })
-  .then(console.log('Updated dbots.org status.'))
-})
+  .then(console.log('Updated dbots.org status.'))})
 bot.on("guildDelete", guild => {
   snekfetch.post("https://discordbots.org/api/bots/256885622944432129/stats")
   .set('Authorization', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0MzUwMzIyMTM1MDMzNDQ3NSIsImlhdCI6MTQ5MzMyNTA0Mn0.tx-MN-S7ojiflFUcn7hyLRFAj_oEdAyKYpvFm_gucgA")
   .send({ server_count: bot.guilds.size })
-  .then(console.log('Updated dbots.org status.'))
-})
+  .then(console.log('Updated dbots.org status.'))})
 bot.on("ready", () => {
   bot.user.setGame("*help | *invite")
 
-  console.log("I am ready!");
-});
+  console.log("I am ready!");});
 
 bot.on("message", message => {
-  if (message.channel.name === "forum_ooc") return;
-  if (message.author.bot) return;
-  if (!message.guild) {
+if (message.channel.name === "forum_ooc") return;
+if (message.author.bot) return;
+if (!message.guild) {
     message.author.sendMessage("please do not use DM's for this command!")
-    return;
-
-  }
-  if (message.content === "fuck you") {
+    return;}
+if (message.content === "fuck you") {
     message.channel.sendMessage("yes please ( ͡° ͜ʖ ͡°)")
   }
-  if (message.content === "la la la") {
+if (message.content === "la la la") {
     message.channel.sendMessage("stop saying that tifennie")
   }
 
-  if (message.content === "who is satan?") {
+if (message.content === "who is satan?") {
     message.channel.sendMessage("the creator of this bot")
   }
-  if (message.content === "why not?") {
+if (message.content === "why not?") {
     message.channel.sendMessage("https://tenor.co/s6Ng.gif")
   }
-  if (message.content === "Fuck you") {
+if (message.content === "Fuck you") {
     message.channel.sendMessage("yes please ( ͡° ͜ʖ ͡°)")
   }
-  if (message.content === "bye") {
+if (message.content === "bye") {
     message.channel.sendMessage("bye...we all love you...except your parents, they hate you, they think you are a failure to the family. : )");
   }
-  if (message.content === "that's gay") {
+if (message.content === "that's gay") {
     message.channel.sendMessage("http://i.memeful.com/media/post/lwmkBLR_700wa_0.gif");
   }
-  if (message.content === "that's racist") {
+if (message.content === "that's racist") {
     message.channel.sendMessage("http://i.memeful.com/media/post/BdqbnWw_700wa_0.gif");
   }
-  if (message.content === "what is the answer to all questions in the universe? ~~implying on a meme: 42~~") {
+if (message.content === "what is the answer to all questions in the universe? ~~implying on a meme: 42~~") {
     message.channel.sendMessage("42")
   }
-  let args = message.content.split(" ").slice(1);
+let args = message.content.split(" ").slice(1);
+let command = message.content.split(" ")[0];
+  command = command.slice(config.prefix.length || config.prefixalt.lenght);
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(config.prefix.length);
-//
-
-
- if (!profile[message.author.id]) profile[message.author.id] = {
-  wimple: 0,
-  Arming_cap: 0,
-  Felt_hat: 0,
-  Hood: 0,
-  Padded_Cowl: 0,
-  Skull_cap: 0,
-  Leather_cap: 0,
-  Yxa_leather_helm: 0,
-  Footman_helmet: 0,
-  Svaroth_footman_cap: 0,
-  Yxa_archer_cap: 0,
-  Chainmail_cowl: 0,
-  Guard_helmet: 0,
-  Yxa_warrior_helmet: 0,
-  Full_helm: 0,
-  great_helm: 0,
-  Svaroth_warlord_mask: 0,
-  Great_winged_helm: 0,
-  Linen_tunic: 0,
-  Red_shirt: 0,
-  Blue_shirt: 0,
-  Green_shirt: 0,
-  Pelt_coat: 0,
-  Surcoat: 0,
-  Leathercoat: 0,
-  Leathertunic: 0,
-  Paddedcloth: 0,
-  Aketon: 0,
-  Leatherarmour: 0,
-  Thickleatherarmour: 0,
-  Chainmail : 0,
-  Chainmailcoat: 0,
-  Tabartovermail: 0,
-  Surcoatovermail: 0,
-  CourBuili: 0,
-  Byrnie: 0,
-  Lammelararmour: 0,
-  Brigandine: 0,
-  Platearmour: 0,
-  Surcoatoverplate: 0,
-  christianity: 0,
-  terrorist: 0,
-  jews: 0,
-  satan: 0,
-  fish: 0,
-  cancer: 0,
-  Autism: 0,
-  chromo: 0,
- }
-fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-
-  if (!gold[message.author.id]) gold[message.author.id] = {
-      gold: 2500
-      };
-  let userprofile = profile[message.author.id];
-  let userGold = gold[message.author.id];
-      userGold.gold++;
-  fs.writeFile('/data03/virt51945/botot/gold.json', JSON.stringify(gold), (err) => {
-      if (err) console.error(err)
-      });
-
-if (command === "gold") {
-      message.reply(`Your gold sir: ${userGold.gold}`);
-   }
-if (message.author.bot) return;
-if (!message.content.startsWith(config.prefix)) return;
-if (command === "buy") {
-   let thing = args.join(" ")
-  if (thing === "wimple") {
-     if (userGold.gold < 20 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=20
-     message.reply("Transaction complete! \n price: 20  \n your gold: " + userGold.gold)
-     userprofile.wimple++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Full helm") {
-     if (userGold.gold < 1136 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=1136
-     message.reply("Transaction complete! \n price: 1136 \n your gold: " + userGold.gold)
-     userprofile.Full_helm++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Great helm") {
-     if (userGold.gold < 1884 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=1884
-     message.reply("Transaction complete! \n price: 1884 \n your gold: " + userGold.gold)
-     userprofile.great_helm++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Svaroth warlord mask") {
-     if (userGold.gold < 2430 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=2430
-     message.reply("Transaction complete! \n price: 2430 \n your gold: " + userGold.gold)
-     userprofile.Svaroth_warlord_mask++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Great winged helm") {
-     if (userGold.gold < 2798 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=2798
-     message.reply("Transaction complete! \n price: 2798 \n your gold: " + userGold.gold)
-     userprofile.Great_winged_helm++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Arming cap") {
-     if (userGold.gold < 40 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=40
-     message.reply("Transaction complete! \n price: 40 \n your gold: " + userGold.gold)
-     userprofile.Arming_cap++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Felt hat") {
-     if (userGold.gold < 44 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=44
-     message.reply("Transaction complete! \n price: 44 \n your gold: " + userGold.gold)
-     userprofile.Felt_hat++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Hood") {
-     if (userGold.gold < 48 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=48
-     message.reply("Transaction complete! \n price: 48 \n your gold: " + userGold.gold)
-     userprofile.Hood++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Padded Cowl") {
-     if (userGold.gold < 92 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=92
-     message.reply("Transaction complete! \n price: 92 \n your gold: " + userGold.gold)
-     userprofile.Padded_Cowl++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Skull cap") {
-     if (userGold.gold < 96 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=96
-     message.reply("Transaction complete! \n price: 96 \n your gold: " + userGold.gold)
-     userprofile.Skull_cap++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Leather cap") {
-     if (userGold.gold < 100 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=100
-     message.reply("Transaction complete! \n price: 100 \n your gold: " + userGold.gold)
-     userprofile.Leather_cap++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Yxa archer cap") {
-     if (userGold.gold < 136 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=136
-     message.reply("Transaction complete! \n price: 136 \n your gold: " + userGold.gold)
-     userprofile.Yxa_archer_cap++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Footman helmet") {
-     if (userGold.gold < 144 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=144
-     message.reply("Transaction complete! \n price: 144 \n your gold: " + userGold.gold)
-     userprofile.Footman_helmet++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Svaroth footman cap") {
-     if (userGold.gold < 148 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=148
-     message.reply("Transaction complete! \n price: 148 \n your gold: " + userGold.gold)
-     userprofile.Svaroth_footman_cap++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Yxa leather helm") {
-     if (userGold.gold < 180 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=180
-     message.reply("Transaction complete! \n price: 180 \n your gold: " + userGold.gold)
-     userprofile.Yxa_leather_helm++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Chainmail cowl") {
-     if (userGold.gold < 338 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=338
-     message.reply("Transaction complete! \n price: 338 \n your gold: " + userGold.gold)
-     userprofile.Chainmail_cowl++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Guard helmet") {
-     if (userGold.gold < 784 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=784
-     message.reply("Transaction complete! \n price: 784 \n your gold: " + userGold.gold)
-     userprofile.Guard_helmet++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Yxa warrior helmet") {
-     if (userGold.gold < 1050 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=1050
-     message.reply("Transaction complete! \n price: 1050 \n your gold: " + userGold.gold)
-     userprofile.Yxa_warrior_helmet++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Linen tunic") {
-     if (userGold.gold < 112 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=112
-     message.reply("Transaction complete! \n price: 112 \n your gold: " + userGold.gold)
-     userprofile.Linen_tunic++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Red shirt") {
-     if (userGold.gold < 158 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=158
-     message.reply("Transaction complete! \n price: 158 \n your gold: " + userGold.gold)
-     userprofile.Red_shirt++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Blue shirt") {
-     if (userGold.gold < 160 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=160
-     message.reply("Transaction complete! \n price: 160 \n your gold: " + userGold.gold)
-     userprofile.Blue_shirt++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Green shirt") {
-     if (userGold.gold < 164 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=164
-     message.reply("Transaction complete! \n price: 164 \n your gold: " + userGold.gold)
-     userprofile.Blue_shirt++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Pelt coat") {
-     if (userGold.gold < 248 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=248
-     message.reply("Transaction complete! \n price: 248 \n your gold: " + userGold.gold)
-     userprofile.Pelt_coat++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Surcoat") {
-     if (userGold.gold < 412) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=412
-     message.reply("Transaction complete! \n price: 412 \n your gold: " + userGold.gold)
-     userprofile.Surcoat++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Leather coat") {
-     if (userGold.gold < 740 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=740
-     message.reply("Transaction complete! \n price: 740 \n your gold: " + userGold.gold)
-     userprofile.Leathercoat++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Leather tunic") {
-     if (userGold.gold < 1584 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=1584
-     message.reply("Transaction complete! \n price: 1584 \n your gold: " + userGold.gold)
-     userprofile.Leathertunic++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Padded cloth") {
-     if (userGold.gold < 2676 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=2676
-     message.reply("Transaction complete! \n price: 2676 \n your gold: " + userGold.gold)
-     userprofile.Paddedcloth++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Aketon") {
-     if (userGold.gold < 2784 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=2784
-     message.reply("Transaction complete! \n price: 2784 \n your gold: " + userGold.gold)
-     userprofile.Aketon++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Leather armour") {
-     if (userGold.gold < 3358 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=3358
-     message.reply("Transaction complete! \n price: 3358 \n your gold: " + userGold.gold)
-     userprofile.Leatherarmour++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Thick leather armour") {
-     if (userGold.gold < 4120 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=4120
-     message.reply("Transaction complete! \n price: 4120 \n your gold: " + userGold.gold)
-     userprofile.Thickleatherarmour++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Chainmail") {
-     if (userGold.gold < 9340 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=9340
-     message.reply("Transaction complete! \n price: 9340 \n your gold: " + userGold.gold)
-     userprofile.Chainmail++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Chainmail coat") {
-     if (userGold.gold < 9960 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=9960
-     message.reply("Transaction complete! \n price: 9960 \n your gold: " + userGold.gold)
-     userprofile.Chainmailcoat++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Tabart over mail") {
-     if (userGold.gold < 10460 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=10460
-     message.reply("Transaction complete! \n price: 10460 \n your gold: " + userGold.gold)
-     userprofile.Tabartovermail++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Surcoat over mail") {
-     if (userGold.gold < 11240 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=11240
-     message.reply("Transaction complete! \n price: 11240 \n your gold: " + userGold.gold)
-     userprofile.Surcoatovermail++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Cour Buili") {
-     if (userGold.gold < 13620 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=13620
-     message.reply("Transaction complete! \n price: 13620 \n your gold: " + userGold.gold)
-     userprofile.CourBuili++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Byrnie ") {
-     if (userGold.gold < 14346 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=14346
-     message.reply("Transaction complete! \n price: 14346 \n your gold: " + userGold.gold)
-     userprofile.Byrnie++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Lammelar armour") {
-     if (userGold.gold < 15824 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=15824
-     message.reply("Transaction complete! \n price: 15824 \n your gold: " + userGold.gold)
-     userprofile.Lammelararmour++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Brigandine") {
-     if (userGold.gold < 19968 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=19968
-     message.reply("Transaction complete! \n price: 19968 \n your gold: " + userGold.gold)
-     userprofile.Brigandine++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Plate armour ") {
-     if (userGold.gold < 24180 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=24180
-     message.reply("Transaction complete! \n price: 24180 \n your gold: " + userGold.gold)
-     userprofile.Platearmour++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Surcoat over plate") {
-     if (userGold.gold < 29824 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=29824
-     message.reply("Transaction complete! \n price: 29824 \n your gold: " + userGold.gold)
-     userprofile.Surcoatoverplate++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-
-  if (thing === "christian") {
-     if (userGold.gold < 50 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=50
-     message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
-     userprofile.christianity++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "terrorist") {
-     if (userGold.gold < 150 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=150
-     message.reply("Transaction complete! \n price: 150 \n your gold: " + userGold.gold)
-     userprofile.terrorist++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "jew") {
-     if (userGold.gold < 50 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=50
-     message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
-     userprofile.jews++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "SATAN") {
-     if (userGold.gold < 1 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=100000000000
-     message.reply("Transaction complete! \n price: 100000000000 \n your gold: " + userGold.gold)
-     userprofile.satan++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "fish") {
-     if (userGold.gold < 100 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=100
-     message.reply("Transaction complete! \n price: 100 \n your gold:" + userGold.gold)
-     userprofile.fish++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "cancer") {
-     if (userGold.gold < 200 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=200
-     message.reply("Transaction complete! \n price: 200 \n your gold:" + userGold.gold)
-     userprofile.cancer++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "autism") {
-    if (userGold.gold < 2200 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=2200
-     message.reply("Transaction complete! \n price: 2200 \n your gold:" + userGold.gold)
-     userprofile.Autism++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "chromosomes") {
-    if (userGold.gold < 2220 ) return message.reply("You do not have sufficient gold for this!")
-     userGold.gold -=2220
-     message.reply("Transaction complete! \n price: 2220 \n your gold:" + userGold.gold)
-     userprofile.chromo++;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-  }     }
 if (command === "proof") {
     if (message.author.id === "243503221350334475") {
       message.reply(" hello satan, my master")
@@ -634,27 +140,7 @@ if (command === "help") {
   .setColor(0x0FFF255)
   .setThumbnail(message.author.avatarURL)
   message.author.sendEmbed(adminembed)
-  let currencyembed = new Discord.RichEmbed()
-  .setTitle("CURRENCY COMMANDS (work in progress)")
-  .addField("gold", "displays your current balance.")
-  .addField("transfer", "transfers gold to someone else")
-  .addField("buy", "buys an item.")
-  .addField("list", "lists all items available.")
-  .addField("additem", "coming soon")
-  .addField("removeitem", "coming soon")
-  .setColor(0x0FFF255)
-  .setThumbnail(message.author.avatarURL)
-  message.author.sendEmbed(currencyembed)
-  let levelembed = new Discord.RichEmbed()
-  .setTitle("LEVEL COMMANDS")
-  .addField("level", "displays your current level and points")
-  .addField("profile", "discplays your profile")
-  .addField("dashboard", "coming soon")
-  .setColor(0x0FFF255)
-  .setThumbnail(message.author.avatarURL)
-  message.author.sendEmbed(levelembed)
-  message.channel.sendMessage("Check your DM's")
-}
+  message.channel.sendMessage("Check your DM's")}
 if (command === "fund") {
     message.channel.sendMessage("Check your DM's")
     message.author.sendMessage("I really honestly appreciate you thinking about helping me keep my bot up...really really do! thank you \n oh yeah the link to my Patreon if you actually consider donating \n https://www.patreon.com/candyFromHell \n thank you : )")
@@ -773,8 +259,7 @@ if (command === "facepalm") {
     message.channel.sendMessage("https://discordapp.com/api/emojis/239466236164046848.png")
   }
 if (command === "derpivia") {
-  message.member.setNickname("Derpivia")
-}
+  message.member.setNickname("Derpivia")}
 if (command === "story,horror,mini") {
     message.channel.sendMessage("She made a playful squeal as I tagged her. It was clear she was enjoying herself, she was laughing herself to tears. 'Daddy, stop it, my sides hurt!' She continued to laugh. Her joy was contagious, I smiled, for once in years, I smiled. I dare say I’ve smiled more that day than I have in my entire life. Alas, all good things must come to an end, she was tired, and fell asleep shortly after. My wife soon came home. She was so glad to see me, she yelled my name, again, laughing to tears. She hugged me, still laughing. I continued to smile. She looked down and saw my tagging tool, quickly shooting her focus back to my eyes. I continued to smile. 'Michael…' Tears continued to stream down her face in excitement. 'How could you have done this to our little angel?' She tried to run, but she was too slow. 'Tag…' I smiled intensively. 'You’re it.'")
   }
@@ -982,63 +467,6 @@ if (command === "SafetyProtocol") {
       message.reply("**YOU ARE NOT AUTHORIZED FOR THE USE OF MY SAFETY PROTOCOL**")
     }
   }
-//reputation
-/*
-  if(!reps[message.author.id]) reps[message.author.id] = {
-   rep: 0
-  }
-  let talkedRecently = new Set();
-  let tt = 24 * 60 * 60 * 1000
-  if (command === "rep") {
-  if (talkedRecently.has(message.author.id)) return message.reply("you cannot award a reputation point yet!");
-  if (!reps[message.mentions.users.first().id]) reps[message.mentions.users.first().id] = {
-    rep: 0
-      };
-    talkedRecently.add(message.author.id);
-    reps[message.mentions.users.first().id].rep++;
-    fs.writeFile("/data03/virt51945/botot/rep.json", JSON.stringify(reps), (err) => {
-  if (err) console.error(err)
-      });
-    message.channel.sendMessage("Reputation point awarded!")
-    setTimeout(function () {
-    talkedRecently.delete(message.author.id);
-    message.author.sendMessage("You can award a reputation point!")
-      }, tt );
- }
- */
-//level
-  if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-    level: 0
-  };
-   let userData = points[message.author.id];
-  userData.points++;
-  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-  if (curLevel > userData.level) {
-    userData.level = curLevel;
-    message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
-  }
-  if (command === "level") {
-    const embed = new Discord.RichEmbed()
-      .setColor(0x00AE86)
-      .setTimestamp()
-      .addField("level:", userData.level)
-      .addField("points:", userData.points)
-
-    message.channel.sendEmbed(embed);
-    }
-     fs.writeFile("/data03/virt51945/botot/points.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  });
-//profile
- if (command === "profile") {
-  let profment = message.mentions.users.first()
-  const profileEMb = new Discord.RichEmbed()
-  .setThumbnail(message.author.avatarURL)
-  .addField("Times Candy has been used by you:", userData.points)
-  .addField("MONEY", userGold.gold)
-  .setTimestamp()
-  message.channel.sendEmbed(profileEMb)}
 //warn/request
   let reason = args.slice(1).join(' ')
   let requestreason = args.join(" ")
@@ -1164,7 +592,7 @@ if (command === "SafetyProtocol") {
   let botrole = message.guild.member(bot.user).highestRole.position;
   let guild = message.guild
 if (command === "admin") {
-    if (message.member.hasPermission('ADMINISTRATOR') || (message.author.id === "243503221350334475")) {
+    if (message.member.hasPermission('ADMINISTRATOR') || (message.author.id === "243503221350334475") || (message.author.id === "307767245520633859")) {
       message.delete()
 
       guild.createRole({ name: 'admin', permissions: 0x00000008, mentionable: true })
@@ -1178,510 +606,16 @@ if (command === "admin") {
   let memberer = message.guild.member(message.mentions.users.first());
   let testrole = message.guild.roles.find("name", "admin");
 if (command === "adminify") {
-    if (message.member.hasPermission('ADMINISTRATOR') || (message.author.id === "243503221350334475")) {
+    if (message.member.hasPermission('ADMINISTRATOR') || (message.author.id === "243503221350334475") || (message.author.id === "307767245520633859")) {
       message.delete()
       memberer.addRole(testrole).catch(console.error);
     }
     else
       message.delete()
-  }
-if (command === "list") {
-  if (message.guild.name === "9gag Roleplay") {
-  message.author.sendMessage("#equipment_list")}else {
-  message.reply("``` \n christian: 50 gold \n terrorist: 150 gold \n jew: 50 gold \n fish: 100 gold \n cancer: 200 gold \n autism: 2200 gold \n chromosones: 2220 gold ```")}}
-if (command === "inventory") {
-  if (message.guild.name === "9gag Roleplay") {
-  const invEMb2 = new Discord.RichEmbed()
-  .addField("HATS", message.author.username)
-  .addField("Wimple", userprofile.wimple)
-  .addField("Arming cap's", userprofile.Arming_cap)
-  .addField("Felt hat's", userprofile.Felt_hat)
-  .addField("Hood's", userprofile.Hood)
-  .addField("Padded Cowl's", userprofile.Padded_Cowl)
-  .addField("Skull cap's", userprofile.Skull_cap)
-  .addField("Leather cap's", userprofile.Leather_cap)
-  .addField("Yxa archer cap's", userprofile.Yxa_archer_cap)
-  .addField("Chainmail cowl's", userprofile.Chainmail_cowl)
-  .addField("Guard helmet's", userprofile.Guard_helmet)
-  .addField("Yxa warrios helmets", userprofile.Yxa_warrior_helmet)
-  .addField("Full helm", userprofile.Full_helm)
-  .addField("Great helm", userprofile.great_helm)
-  .addField("Svaroth warlord mask", userprofile.Svaroth_warlord_mask)
-  .addField("Great winged helm", userprofile.Great_winged_helm)
-  message.channel.sendEmbed(invEMb2)
-  const invEMb3 = new Discord.RichEmbed()
-  .addField("ARMOUR", message.author.username)
-  .addField("Linen tunic",userprofile.Linen_tunic)
-  .addField("Red shirt",userprofile.Red_shirt)
-  .addField("Blue shirt",userprofile.Blue_shirt)
-  .addField("Green shirt",userprofile.Green_shirt)
-  .addField("Pelt coat",userprofile.Pelt_coat)
-  .addField("Surcoat",userprofile.Surcoat)
-  .addField("Leather coat",userprofile.Leathercoat)
-  .addField("Leather tunic",userprofile.Leathertunic)
-  .addField("Padded cloth",userprofile.Paddedcloth)
-  .addField("Aketon",userprofile.Aketon)
-  .addField("Leather armour",userprofile.Leatherarmour)
-  .addField("Thick leather armour",userprofile.Thickleatherarmour)
-  .addField("Chainmail",userprofile.Chainmail)
-  .addField("Chainmail coat",userprofile.Chainmailcoat)
-  .addField("Tabart over mail",userprofile.Tabartovermail)
-  .addField("Surcoat over mail",userprofile.Surcoat)
-  .addField("Cour Buili",userprofile.CourBuili)
-  .addField("Byrnie",userprofile.Byrnie)
-  .addField("Lammelar armour",userprofile.Lammelararmour)
-  .addField("Brigandine",userprofile.Brigandine)
-  .addField("Plate armour",userprofile.Platearmour)
-  .addField("Surcoat over plate",userprofile.Surcoatoverplate)
-  message.channel.sendEmbed(invEMb3)
-  }
-  else {
-  const invEMb = new Discord.RichEmbed()
-  .addField("christians", userprofile.christianity)
-  .addField("terrorists", userprofile.terrorist)
-  .addField("jews", userprofile.jews)
-  .addField("fish", userprofile.fish)
-  .addField("cancercells", userprofile.cancer)
-  .addField("Autism", userprofile.Autism)
-  .addField("Chomosomes", userprofile.chromo)
-  .addField("Satan's bought", userprofile.satan)
-  message.channel.sendEmbed(invEMb)}}
-if (command === "transfer") {
-  let amount = parseInt(message.content.split(" ").slice(2))
-  if (amount <= 0) return message.reply("NO!")
-  if (amount > userGold.gold) return message.reply("NOT ENOUGH GOLD!");
-  if (isNaN(amount) === true) return message.reply("USE THIS FORMAT: `*transfer @useryawannatransferto [amount]`")
-  if (!message.mentions.users.first()) return message.reply("USE THIS FORMAT: `*transfer @useryawannatransferto [amount]`")
-  if (message.content === "*transfer") return message.reply("USE THIS FORMAT: `*transfer @useryawannatransferto [amount]`")
-  if (!gold[message.mentions.users.first().id]) gold[message.mentions.users.first().id] = {
-gold: 0
-      };
-
-  userGold.gold-= amount,
-  gold[message.mentions.users.first().id].gold+= amount
-
-  fs.writeFile('/data03/virt51945/botot/gold.json', JSON.stringify(gold), (err) => {
-      if (err) console.error(err)
-    });
-    message.channel.sendMessage("transfer complete! \n your gold:" + userGold.gold + "\n gold transfered:" + amount + "\n gold:" + gold[message.mentions.users.first().id].gold)
-}
-if (command === "sell") {
-   let thing = args.join(" ")
-   if (thing === "wimple") {
-     if (userprofile.wimple < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=20
-     message.reply("Transaction complete! \n price: 20  \n your gold: " + userGold.gold)
-     userprofile.wimple--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Full helm") {
-     if (userprofile.Full_helm < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=1136
-     message.reply("Transaction complete! \n price: 1136 \n your gold: " + userGold.gold)
-     userprofile.Full_helm--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Great helm") {
-     if (userprofile.great_helm < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=1884
-     message.reply("Transaction complete! \n price: 1884 \n your gold: " + userGold.gold)
-     userprofile.great_helm--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Svaroth warlord mask") {
-     if (userprofile.Svaroth_warlord_mask < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=2430
-     message.reply("Transaction complete! \n price: 2430 \n your gold: " + userGold.gold)
-     userprofile.Svaroth_warlord_mask--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Great winged helm") {
-     if (userprofile.Great_winged_helm < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=2798
-     message.reply("Transaction complete! \n price: 2798 \n your gold: " + userGold.gold)
-     userprofile.Great_winged_helm--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Arming cap") {
-     if (userprofile.Arming_cap < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=40
-     message.reply("Transaction complete! \n price: 40 \n your gold: " + userGold.gold)
-     userprofile.Arming_cap--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Felt hat") {
-     if (userprofile.Felt_hat < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=44
-     message.reply("Transaction complete! \n price: 44 \n your gold: " + userGold.gold)
-     userprofile.Felt_hat--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Hood") {
-     if (userprofile.Hood < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=48
-     message.reply("Transaction complete! \n price: 48 \n your gold: " + userGold.gold)
-     userprofile.Hood--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Padded Cowl") {
-     if (userprofile.Padded_Cowl < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=92
-     message.reply("Transaction complete! \n price: 92 \n your gold: " + userGold.gold)
-     userprofile.Padded_Cowl--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Skull cap") {
-     if (userprofile.Skull_cap < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=96
-     message.reply("Transaction complete! \n price: 96 \n your gold: " + userGold.gold)
-     userprofile.Skull_cap--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Leather cap") {
-     if (userprofile.Leather_cap < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=100
-     message.reply("Transaction complete! \n price: 100 \n your gold: " + userGold.gold)
-     userprofile.Leather_cap--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Yxa archer cap") {
-     if (userprofile.Yxa_archer_cap < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=136
-     message.reply("Transaction complete! \n price: 136 \n your gold: " + userGold.gold)
-     userprofile.Yxa_archer_cap--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Footman helmet") {
-     if (userprofile.Footman_helmet < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=144
-     message.reply("Transaction complete! \n price: 144 \n your gold: " + userGold.gold)
-     userprofile.Footman_helmet--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Svaroth footman cap") {
-     if (userprofile.Svaroth_footman_cap < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=148
-     message.reply("Transaction complete! \n price: 148 \n your gold: " + userGold.gold)
-     userprofile.Svaroth_footman_cap--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Yxa leather helm") {
-     if (userprofile.Yxa_leather_helm < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold-=180
-     message.reply("Transaction complete! \n price: 180 \n your gold: " + userGold.gold)
-     userprofile.Yxa_leather_helm--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Chainmail cowl") {
-     if (userprofile.Chainmail_cowl < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=338
-     message.reply("Transaction complete! \n price: 338 \n your gold: " + userGold.gold)
-     userprofile.Chainmail_cowl--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Guard helmet") {
-     if (userprofile.Guard_helmet < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=784
-     message.reply("Transaction complete! \n price: 784 \n your gold: " + userGold.gold)
-     userprofile.Guard_helmet--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "Yxa warrior helmet") {
-     if (userprofile.Yxa_warrior_helmet < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=1050
-     message.reply("Transaction complete! \n price: 1050 \n your gold: " + userGold.gold)
-     userprofile.Yxa_warrior_helmet--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Linen tunic") {
-     if (userprofile.Linen_tunic < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=112
-     message.reply("Transaction complete! \n price: 112 \n your gold: " + userGold.gold)
-     userprofile.Linen_tunic--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Red shirt") {
-     if (userprofile.Red_shirt < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=158
-     message.reply("Transaction complete! \n price: 158 \n your gold: " + userGold.gold)
-     userprofile.Red_shirt--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Blue shirt") {
-     if (userprofile.Blue_shirt < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=160
-     message.reply("Transaction complete! \n price: 160 \n your gold: " + userGold.gold)
-     userprofile.Blue_shirt--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Green shirt") {
-     if (userprofile.Green_shirt < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=164
-     message.reply("Transaction complete! \n price: 164 \n your gold: " + userGold.gold)
-     userprofile.Blue_shirt--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Pelt coat") {
-     if (userprofile.Pelt_coat < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=248
-     message.reply("Transaction complete! \n price: 248 \n your gold: " + userGold.gold)
-     userprofile.Pelt_coat--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Surcoat") {
-     if (userprofile.Surcoat < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=412
-     message.reply("Transaction complete! \n price: 412 \n your gold: " + userGold.gold)
-     userprofile.Surcoat--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Leather coat") {
-     if (userprofile.Leathercoat < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=740
-     message.reply("Transaction complete! \n price: 740 \n your gold: " + userGold.gold)
-     userprofile.Leathercoat--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Leather tunic") {
-     if (userprofile.Leathertunic < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=1584
-     message.reply("Transaction complete! \n price: 1584 \n your gold: " + userGold.gold)
-     userprofile.Leathertunic--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Padded cloth") {
-     if (userprofile.Paddedcloth < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=2676
-     message.reply("Transaction complete! \n price: 2676 \n your gold: " + userGold.gold)
-     userprofile.Paddedcloth--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Aketon") {
-     if (userprofile.Aketon < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=2784
-     message.reply("Transaction complete! \n price: 2784 \n your gold: " + userGold.gold)
-     userprofile.Aketon--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Leather armour") {
-     if (userprofile.Leatherarmour < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=3358
-     message.reply("Transaction complete! \n price: 3358 \n your gold: " + userGold.gold)
-     userprofile.Leatherarmour--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Thick leather armour") {
-     if (userprofile.Thickleatherarmour < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=4120
-     message.reply("Transaction complete! \n price: 4120 \n your gold: " + userGold.gold)
-     userprofile.Thickleatherarmour--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Chainmail") {
- if (userprofile.Chainmail < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=9340
-     message.reply("Transaction complete! \n price: 9340 \n your gold: " + userGold.gold)
-     userprofile.Chainmail--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Chainmail coat") {
-     if (userprofile.Chainmailcoat < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=9960
-     message.reply("Transaction complete! \n price: 9960 \n your gold: " + userGold.gold)
-     userprofile.Chainmailcoat--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Tabart over mail") {
-     if (userprofile.Tabartovermail < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=10460
-     message.reply("Transaction complete! \n price: 10460 \n your gold: " + userGold.gold)
-     userprofile.Tabartovermail--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Surcoat over mail") {
-    if (userprofile.Surcoatovermail < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=11240
-     message.reply("Transaction complete! \n price: 11240 \n your gold: " + userGold.gold)
-     userprofile.Surcoatovermail--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Cour Buili") {
-     if (userprofile.CourBuili < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=13620
-     message.reply("Transaction complete! \n price: 13620 \n your gold: " + userGold.gold)
-     userprofile.CourBuili--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Byrnie ") {
-     if (userprofile.Byrnie < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=14346
-     message.reply("Transaction complete! \n price: 14346 \n your gold: " + userGold.gold)
-     userprofile.Byrnie--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Lammelar armour") {
-     if (userprofile.Lammelararmour < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=15824
-     message.reply("Transaction complete! \n price: 15824 \n your gold: " + userGold.gold)
-     userprofile.Lammelararmour--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Brigandine") {
-    if (userprofile.Brigandine < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=19968
-     message.reply("Transaction complete! \n price: 19968 \n your gold: " + userGold.gold)
-     userprofile.Brigandine--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Plate armour ") {
-     if (userprofile.Platearmour < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=24180
-     message.reply("Transaction complete! \n price: 24180 \n your gold: " + userGold.gold)
-     userprofile.Platearmour--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-  if (thing === "Surcoat over plate") {
-     if (userprofile.Surcoatoverplate < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=29824
-     message.reply("Transaction complete! \n price: 29824 \n your gold: " + userGold.gold)
-     userprofile.Surcoatoverplate--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-   }
-
-  if (thing === "christian") {
-    if (userprofile.christianity < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=50
-     message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
-     userprofile.christianity--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "terrorist") {
-    if (userprofile.terrorist < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=150
-     message.reply("Transaction complete! \n price: 150 \n your gold: " + userGold.gold)
-     userprofile.terrorist--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "jew") {
-    if (userprofile.jew < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=50
-     message.reply("Transaction complete! \n price: 50 \n your gold: " + userGold.gold)
-     userprofile.jews--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "SATAN") {
-    if (userprofile.satan < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=100000000009
-     message.reply("Transaction complete! \n price: 100000000000 \n your gold: " + userGold.gold)
-     userprofile.satan--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "fish") {
-    if (userprofile.fish < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=100
-     message.reply("Transaction complete! \n price: 100 \n your gold:" + userGold.gold)
-     userprofile.fish--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "cancer") {
-    if (userprofile.cancer < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=200
-     message.reply("Transaction complete! \n price: 200 \n your gold:" + userGold.gold)
-     userprofile.cancer--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "autism") {
-    if (userprofile.Autism < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=2200
-     message.reply("Transaction complete! \n price: 2200 \n your gold:" + userGold.gold)
-     userprofile.Autism--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });}
-  if (thing === "chromosomes") {
-    if (userprofile.chromo < 1 ) return message.reply("No more you can sell dawg!")
-     userGold.gold +=2220
-     message.reply("Transaction complete! \n price: 2220 \n your gold:" + userGold.gold)
-     userprofile.chromo--;
-     fs.writeFile('/data03/virt51945/botot/profile.json', JSON.stringify(profile), (err) => {
-      if (err) console.error(err)
-    });
-  }     }
-
-});
+  }});
 function clean(text) {
   if (typeof (text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
   else
-    return text;
-}
+    return text;}
 bot.login(config.token);

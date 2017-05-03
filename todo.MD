@@ -18,6 +18,7 @@ TODO:
   - not neccesary 
 * migrate to DB (MySQL/MariaDB preferred)
   - DB is set up correctly, now we only need to use it
+  - current alternative: .sqlite that is just stored on the server itself
 * find independent hosting partner
    - done 
 

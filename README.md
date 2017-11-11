@@ -1,2 +1,2 @@
-# botot
-d.js bot
+i have abandoned this project
+
